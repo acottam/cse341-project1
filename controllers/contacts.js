@@ -13,6 +13,7 @@ const getSingle = async (req, res) => {
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().collection('contacts').find({ _id: contactId });
     result.toArray().then((contacts) => {
+        if (!contacts[0]) return res.status(404).json('Contact not found.');
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts[0]);
     });
@@ -28,8 +29,8 @@ const createContact = async (req, res) => {
     };
 
     const response = await mongodb.getDatabase().collection('contacts').insertOne(contact);
-    if (response.Acknowledged > 0) {
-        res.status(204).send();
+    if (response.acknowledged) {
+        res.status(201).json({ id: response.insertedId });
     } else {
         res.status(500).json(response.error || 'Some error occurred while creating the contact.');
     }
@@ -47,7 +48,7 @@ const updateContact = async (req, res) => {
 
     const response = await mongodb.getDatabase().collection('contacts').replaceOne({ _id: contactId }, contact );
     if (response.modifiedCount > 0) {
-        res.status(204).send();
+        res.status(200).json({ id: contactId });
     } else {
         res.status(500).json(response.error || 'Some error occurred while updating the contact.');
     }

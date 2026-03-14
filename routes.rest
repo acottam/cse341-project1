@@ -34,3 +34,40 @@ Content-Type: application/json
 ### DELETE a contact
 DELETE http://localhost:3000/contacts/69b4bb8790cfc4f209c136a6 HTTP/1.1 
 
+// RENDER - https://cse341-project-1-bo77.onrender.com/
+
+### GET all contacts 
+GET https://cse341-project-1-bo77.onrender.com/contacts
+
+### GET a single contact by ID
+GET https://cse341-project-1-bo77.onrender.com/contacts/69abc1183fdb9cbecb5710b0
+
+
+### CREATE a new contact
+POST https://cse341-project-1-bo77.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Billy",
+  "lastName": "Bob",
+  "email": "billy.bob@example.com",
+  "favoriteColor": "blue",
+  "birthday": "1985-10-20"
+}
+
+### UPDATE a contact
+PUT https://cse341-project-1-bo77.onrender.com/contacts/69abc1183fdb9cbecb5710b0 HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "favoriteColor": "green",
+  "birthday": "1988-09-22"
+}
+
+### DELETE a contact
+DELETE https://cse341-project-1-bo77.onrender.com/contacts/69b4c05526f4aa13ed867171 HTTP/1.1 
+
+
