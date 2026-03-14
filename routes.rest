@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### DELETE a contact
-DELETE http://localhost:3000/contacts/69b4bb8790cfc4f209c136a6 HTTP/1.1 
+DELETE http://localhost:3000/contacts/69b4c1d63c26876470956ee4 HTTP/1.1 
 
 // RENDER - https://cse341-project-1-bo77.onrender.com/
 
@@ -68,6 +68,4 @@ Content-Type: application/json
 }
 
 ### DELETE a contact
-DELETE https://cse341-project-1-bo77.onrender.com/contacts/69b4c05526f4aa13ed867171 HTTP/1.1 
-
-
+DELETE https://cse341-project-1-bo77.onrender.com/contacts/69b4c0e826f4aa13ed867172 HTTP/1.1 
