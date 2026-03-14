@@ -1,3 +1,0 @@
-GET https://cse341-project-1-bo77.onrender.com/contacts
-
-#GET https://cse341-project-1-bo77.onrender.com/contacts/69abc1183fdb9cbecb5710b0
